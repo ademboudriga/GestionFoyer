@@ -19,15 +19,14 @@ import java.util.Set;
 public class Bloc implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idBlock;
+    private Long idBloc;
     private String nomBloc;
     private int capaciteBloc;
     @ManyToOne
     Foyer foyer;
 
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="bloc")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bloc")
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    @ToString.Exclude
     private Set<Chambre> chambres;
-
-
 }

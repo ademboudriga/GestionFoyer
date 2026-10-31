@@ -26,5 +26,7 @@ public class Reservation implements Serializable {
     private boolean estValide;
 
     @ManyToMany(mappedBy = "reservations", cascade = CascadeType.ALL)
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    @ToString.Exclude
     private Set<Etudiant> etudiants;
 }

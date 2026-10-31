@@ -26,7 +26,7 @@ public class Foyer implements Serializable {
     private Universite universite;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="foyer")
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    @ToString.Exclude
     private Set<Bloc> bloques;
-
-
 }
